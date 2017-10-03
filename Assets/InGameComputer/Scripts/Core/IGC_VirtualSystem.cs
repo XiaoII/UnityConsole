@@ -67,25 +67,42 @@ public string department = "Department";
 
 
         //make random for better immersion
-        if (department == "Player")
+        if (department == "Pl")//Player
         {
             System.Random rnd = new System.Random();
             int idNo = rnd.Next(100, 1000);
-            gameObject.name = department + "5" + idNo  + " " + IP;
+            gameObject.name = department + "0" + idNo  + " " + IP;
         }
-        if (department == "HR")
+        if (department == "IT")//IT
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "1" + idNo + " " + IP;
+        }
+        if (department == "HR")//Human Res
         {
             System.Random rnd = new System.Random();
             int idNo = rnd.Next(100, 1000);
             gameObject.name = department + "2" + idNo +  " " + IP;
         }
-        if (department == "IT")
+        if (department == "FN")//Finance
         {
             System.Random rnd = new System.Random();
             int idNo = rnd.Next(100, 1000);
-            gameObject.name = department + "1" + idNo  +  " " + IP;
+            gameObject.name = department + "3" + idNo + " " + IP;
         }
-
+        if (department == "SL")//Sales
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "4" + idNo + " " + IP;
+        }
+        if (department == "DV")//Development
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "5" + idNo + " " + IP;
+        }
 
 
         //start the chain of init events
@@ -158,8 +175,15 @@ public string department = "Department";
 		if(GetComponent<NetworkView>() == null || Network.peerType != NetworkPeerType.Client){
 			string[] iplist = new string[4];
 			string ip;
+            string[] networks = new string[3];
+            networks[0] = "192";
+            networks[1] = "10";
+            networks[2] = "172";
+            //10.0.0.0 - 10.255.255.255                 172.16.0.0-172.31.255.255                   192.168.0.0 - 192.168.255.255
 
-			while(true && this.IP == string.Empty){
+
+
+            while (true && this.IP == string.Empty){
 				for(int i=0; i<4; i++){
 					iplist[i] = Random.Range(0,255).ToString();
 				}
@@ -173,7 +197,7 @@ public string department = "Department";
 				}
 			}
 
-			gameObject.name = department + " " + IP;
+			//gameObject.name = department + " " + IP;
 		}
 	}
 

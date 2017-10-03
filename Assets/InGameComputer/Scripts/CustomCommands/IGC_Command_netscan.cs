@@ -18,7 +18,7 @@ public class IGC_Command_netscan : IGC_Command
         for (int i = 0; i < Computers.Length; i++)
         {       
            IGC_VirtualSystem virtualSystem = Computers[i].GetComponent<IGC_VirtualSystem>();
-            ipAdd += " " + virtualSystem.IP + "\n";
+            ipAdd += " " + virtualSystem.name +  "\n";
         }
         return ipAdd;
     }
