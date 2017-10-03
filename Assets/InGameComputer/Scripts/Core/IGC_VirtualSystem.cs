@@ -13,6 +13,9 @@ public class IGC_VirtualSystem : MonoBehaviour {
 	public string 
 		modelName = "CRL 5000",
 		IP;
+
+public string department = "Department";
+
 	[HideInInspector] public InGameComputer terminal;
 	[HideInInspector] public IGC_Language language;
 	[HideInInspector] public IGC_FileSystem fileSystem;
@@ -62,9 +65,26 @@ public class IGC_VirtualSystem : MonoBehaviour {
 			//Destroy(networkView);
 		}
 
-       
+
         //make random for better immersion
-        gameObject.name = "Computer " + IP;
+        if (department == "Player")
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "5" + idNo  + " " + IP;
+        }
+        if (department == "HR")
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "2" + idNo +  " " + IP;
+        }
+        if (department == "IT")
+        {
+            System.Random rnd = new System.Random();
+            int idNo = rnd.Next(100, 1000);
+            gameObject.name = department + "1" + idNo  +  " " + IP;
+        }
 
 
 
@@ -153,7 +173,7 @@ public class IGC_VirtualSystem : MonoBehaviour {
 				}
 			}
 
-			gameObject.name = "Computer_" + IP;
+			gameObject.name = department + " " + IP;
 		}
 	}
 
