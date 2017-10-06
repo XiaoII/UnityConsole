@@ -179,7 +179,7 @@ public string department = "Department";
             networks[0] = "192";
             networks[1] = "10";
             networks[2] = "172";
-            //10.0.0.0 - 10.255.255.255                 172.16.0.0-172.31.255.255                   192.168.0.0 - 192.168.255.255
+            
 
 
 
