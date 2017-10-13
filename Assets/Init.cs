@@ -28,24 +28,27 @@ public class Init : MonoBehaviour {
         {
             ip2 = "168";
             ip3 = Random.Range(0, 255).ToString();
+            ipAddress1 = ip1 + "." + ip2 + "." + ip3 + ".";
         }
         if (ip1 == "172")
         {
             ip2 = Random.Range(16, 31).ToString();
             ip3 = Random.Range(0, 255).ToString();
+            ipAddress1 = ip1 + "." + ip2 + "." + ip3 + ".";
         }
-        else
+        else if (ip1 == "10")
         {
             ip2 = Random.Range(0, 255).ToString();
             ip3 = Random.Range(0, 255).ToString();
+            ipAddress1 = ip1 + "." + ip2 + "." + ip3 + ".";
         }
 
-        ipAddress1 = ip1 + "." + ip2 + "." + ip3 + ".";
+
     }
 
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

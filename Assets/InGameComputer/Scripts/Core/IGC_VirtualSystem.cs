@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class IGC_VirtualSystem : MonoBehaviour {
 
 	public static string uniqueID = string.Empty;
-
+    public static string network;
 	public bool eraseSaveDataOnStart = false;
 	public string 
 		modelName = "CRL 5000",
@@ -172,18 +172,21 @@ public string department = "Department";
 
 	private void GenerateIP ()
 	{
-		if(GetComponent<NetworkView>() == null || Network.peerType != NetworkPeerType.Client){
-			string[] iplist = new string[4];
-			string ip;
-            string[] networks = new string[3];
-            networks[0] = "192";
-            networks[1] = "10";
-            networks[2] = "172";
+        if (GetComponent<NetworkView>() == null || Network.peerType != NetworkPeerType.Client)
+        {
+            string[] iplist = new string[4];
+            string ip;
+
             
+            
+                GameObject network = GameObject.FindGameObjectWithTag("Initialise");
+                Init initIP = network.GetComponent<Init>();
 
+                IP = initIP.ipAddress1;
+            
+        
 
-
-            while (true && this.IP == string.Empty){
+            /*while (true && this.IP == string.Empty){
 				for(int i=0; i<4; i++){
 					iplist[i] = Random.Range(0,255).ToString();
 				}
@@ -195,7 +198,7 @@ public string department = "Department";
 					IPs.Add(ip);
 					break;
 				}
-			}
+			}*/
 
 			//gameObject.name = department + " " + IP;
 		}
